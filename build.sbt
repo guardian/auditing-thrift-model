@@ -47,11 +47,11 @@ releaseProcess := Seq[ReleaseStep](
     inquireVersions,
     runClean,
     runTest,
-    //setReleaseVersion,
-    //commitReleaseVersion,
-    //tagRelease,
+    setReleaseVersion,
+    commitReleaseVersion,
+    tagRelease,
     publishArtifacts,
-    //setNextVersion,
+    setNextVersion,
     commitNextVersion,
     releaseStepCommand("sonatypeReleaseAll")
     pushChanges
