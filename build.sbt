@@ -1,7 +1,7 @@
 import sbtrelease._
 import ReleaseStateTransformations._
 
-name := "notifications-model"
+name := "auditing-thrift-model"
 organization := "com.gu"
 scalaVersion := "2.11.7"
 
@@ -22,13 +22,13 @@ crossScalaVersions := Seq("2.10.6", "2.11.7")
 unmanagedResourceDirectories in Compile += baseDirectory.value / "src/main/thrift"
 
 // Publish settings
-scmInfo := Some(ScmInfo(url("https://github.com/guardian/notifications-model"),
-    "scm:git:git@github.com:guardian/notifications-model.git"))
+scmInfo := Some(ScmInfo(url("https://github.com/guardian/auditing-thrift-model"),
+    "scm:git:git@github.com:guardian/auditing-thrift-model.git"))
 
 description := "Notifications model"
 
 pomExtra := (
-    <url>https://github.com/guardian/notifications-model</url>
+    <url>https://github.com/guardian/auditing-thrift-model</url>
     <developers>
         <developer>
             <id>Reettaphant</id>
@@ -53,6 +53,6 @@ releaseProcess := Seq[ReleaseStep](
     publishArtifacts,
     setNextVersion,
     commitNextVersion,
-    releaseStepCommand("sonatypeReleaseAll")
+    releaseStepCommand("sonatypeReleaseAll"),
     pushChanges
 )

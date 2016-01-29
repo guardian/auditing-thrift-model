@@ -1,4 +1,4 @@
-namespace scala com.gu.notifications.model.v1
+namespace scala com.gu.auditing.model.v1
 
 enum App {
     FaciaTool = 1
