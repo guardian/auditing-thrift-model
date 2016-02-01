@@ -25,7 +25,7 @@ unmanagedResourceDirectories in Compile += baseDirectory.value / "src/main/thrif
 scmInfo := Some(ScmInfo(url("https://github.com/guardian/auditing-thrift-model"),
     "scm:git:git@github.com:guardian/auditing-thrift-model.git"))
 
-description := "Notifications model"
+description := "Thrift model for auditing updates"
 
 pomExtra := (
     <url>https://github.com/guardian/auditing-thrift-model</url>
