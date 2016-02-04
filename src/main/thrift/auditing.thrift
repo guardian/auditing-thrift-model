@@ -1,4 +1,4 @@
-namespace scala com.gu.auditing.model.v1
+#@namespace scala com.gu.auditing.model.v1
 
 /** List of applications **/
 enum App {
