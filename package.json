@@ -1,7 +1,7 @@
 {
 	"name": "auditing-thrift-model",
 	"description": "Thrift model for auditing updates",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"compile": "thrift --gen js:node --out build src/main/thrift/auditing.thrift"
 	},
