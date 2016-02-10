@@ -1,4 +1,4 @@
-var model = require('../build/auditing_types.js');
+// APPENDED TO AUTO_GENERATED FILE
 
 var appIdToName = {};
 for (var key in model.App) {
@@ -7,8 +7,6 @@ for (var key in model.App) {
 	}
 }
 
-model.Notification.prototype.getAppName = function () {
+Notification.prototype.getAppName = function () {
 	return appIdToName[this.app];
 };
-
-module.exports = model;
