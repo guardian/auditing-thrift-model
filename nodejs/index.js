@@ -1,9 +1,9 @@
 // APPENDED TO AUTO_GENERATED FILE
 
 var appIdToName = {};
-for (var key in model.App) {
-	if (model.App.hasOwnProperty(key)) {
-		appIdToName[model.App[key]] = key;
+for (var key in ttypes.App) {
+	if (ttypes.App.hasOwnProperty(key)) {
+		appIdToName[ttypes.App[key]] = key;
 	}
 }
 
