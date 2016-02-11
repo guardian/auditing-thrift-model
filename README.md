@@ -46,7 +46,9 @@ var message = new Notification({
     message = JSON.stringify({json})
 });
 
-var bytes = serializer.write(message);
+serializer.write(message, serializer.Compression.Gzip, function (err, bytes) {
+    // use the buffer somehow
+});
 ```
 
 ### Receiving notifications
@@ -56,7 +58,7 @@ var bytes = serializer.write(message);
 var serializer = require('thrift-serialize');
 var Notification = require('auditing-thrift-model').Notification;
 
-serializer.read(Notification, data).then(function (message) {
+serializer.read(Notification, data, function (err, message) {
     console.log(message.operation, message.date);
     // You can have the full name of the source app calling
     console.log(message.getAppName());
