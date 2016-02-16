@@ -20,6 +20,8 @@ Notification = module.exports.Notification = function(args) {
   this.date = null;
   this.resourceId = null;
   this.message = null;
+  this.shortMessage = null;
+  this.expiryDate = null;
   if (args) {
     if (args.app !== undefined && args.app !== null) {
       this.app = args.app;
@@ -46,6 +48,12 @@ Notification = module.exports.Notification = function(args) {
     }
     if (args.message !== undefined && args.message !== null) {
       this.message = args.message;
+    }
+    if (args.shortMessage !== undefined && args.shortMessage !== null) {
+      this.shortMessage = args.shortMessage;
+    }
+    if (args.expiryDate !== undefined && args.expiryDate !== null) {
+      this.expiryDate = args.expiryDate;
     }
   }
 };
@@ -105,6 +113,20 @@ Notification.prototype.read = function(input) {
         input.skip(ftype);
       }
       break;
+      case 7:
+      if (ftype == Thrift.Type.STRING) {
+        this.shortMessage = input.readString();
+      } else {
+        input.skip(ftype);
+      }
+      break;
+      case 8:
+      if (ftype == Thrift.Type.STRING) {
+        this.expiryDate = input.readString();
+      } else {
+        input.skip(ftype);
+      }
+      break;
       default:
         input.skip(ftype);
     }
@@ -144,6 +166,16 @@ Notification.prototype.write = function(output) {
   if (this.message !== null && this.message !== undefined) {
     output.writeFieldBegin('message', Thrift.Type.STRING, 6);
     output.writeString(this.message);
+    output.writeFieldEnd();
+  }
+  if (this.shortMessage !== null && this.shortMessage !== undefined) {
+    output.writeFieldBegin('shortMessage', Thrift.Type.STRING, 7);
+    output.writeString(this.shortMessage);
+    output.writeFieldEnd();
+  }
+  if (this.expiryDate !== null && this.expiryDate !== undefined) {
+    output.writeFieldBegin('expiryDate', Thrift.Type.STRING, 8);
+    output.writeString(this.expiryDate);
     output.writeFieldEnd();
   }
   output.writeFieldStop();
