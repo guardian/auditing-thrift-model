@@ -14,7 +14,7 @@ struct Notification {
     /** action / operation happening in the tool **/
     2: required string operation;
 
-    /** email of the person making the operation **/
+    /** email of the person making the operation, pruned regularly **/
     3: required string userEmail;
 
     /** ISO 8601 date of when the operation occurred **/
@@ -23,7 +23,12 @@ struct Notification {
     /** Identifies a resource in the source application **/
     5: optional string resourceId;
 
-    /** Additional data relevant to the source application **/
+    /** Additional data relevant to the source application, this is pruned regularly **/
     6: optional string message;
 
+    /** Additional data relevant to the source application, this is stored for the entire notification duration **/
+    7: optional string shortMessage;
+
+    /** ISO 8601 date of when the operation should be pruned, if empty it'll be stored forever **/
+    8: optional string expiryDate;
 }
