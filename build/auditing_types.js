@@ -11,7 +11,8 @@ var Q = thrift.Q;
 var ttypes = module.exports = {};
 ttypes.App = {
   'FaciaTool' : 1,
-  'StoryPackages' : 2
+  'StoryPackages' : 2,
+  'TagManager' : 3
 };
 Notification = module.exports.Notification = function(args) {
   this.app = null;

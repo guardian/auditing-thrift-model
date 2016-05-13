@@ -8,7 +8,7 @@ in `build.sbt`
 
 ```scala
 libraryDependencies ++= Seq(
-    "com.gu" %% "auditing-thrift-model" % "0.0.1"
+    "com.gu" %% "auditing-thrift-model" % "0.2.0"
 )
 ```
 
