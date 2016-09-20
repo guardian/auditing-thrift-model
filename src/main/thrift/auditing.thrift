@@ -5,6 +5,7 @@ enum App {
     FaciaTool = 1
     StoryPackages = 2
     TagManager = 3
+    Targeting = 4
 }
 
 /** Basic message **/
