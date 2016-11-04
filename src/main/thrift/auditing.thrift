@@ -6,6 +6,7 @@ enum App {
     StoryPackages = 2
     TagManager = 3
     Targeting = 4
+    MediaServices = 5
 }
 
 /** Basic message **/
